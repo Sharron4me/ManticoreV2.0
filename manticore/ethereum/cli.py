@@ -88,7 +88,7 @@ def choose_detectors(args):
 
     return detectors_to_run
 
-def check_timestamp(file_name):
+def check_vulnerability(file_name):
     file1 = open(file_name, 'r')
     Lines = file1.readlines()
     count = 0
@@ -128,7 +128,7 @@ def check_timestamp(file_name):
 def ethereum_main(args, logger):
     # print("WOekdsd : ",args.argv, os.getcwd())`
     m = ManticoreEVM(workspace_url=args.workspace)
-    check_timestamp(args.argv[0])
+    check_vulnerability(args.argv[0])
     if not args.thorough_mode:
         args.avoid_constant = True
         args.exclude_all = True
